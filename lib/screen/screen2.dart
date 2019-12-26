@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
                 ),
                 color: Colors.white70,
               ),
-              height: MediaQuery.of(context).size.height + 10,
+              height: MediaQuery.of(context).size.height + 100,
               width: MediaQuery.of(context).size.width,
               // height: 1000,
 
@@ -89,6 +89,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   ProfileRow(),
+                  Divider(),
                   BigTitle(
                     title: 'الوصف',
                   ),
@@ -109,8 +110,10 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ButtonWithIcon('تعليق', 'comment.png'),
+                        SizedBox(width: 5),
                         ButtonWithIcon('تواصل', 'message.png'),
-                        ButtonWithIcon(' اعجاب ', 'like1.png'),
+                        SizedBox(width: 5),
+                        ButtonWithIcon('اعجاب', 'like1.png'),
                       ],
                     ),
                   ),
@@ -125,6 +128,7 @@ class HomePage extends StatelessWidget {
                     children: <Widget>[
                       FlatButton(
                         child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Image(
                               height: 24,
@@ -144,22 +148,16 @@ class HomePage extends StatelessWidget {
                         ),
                         onPressed: () {},
                       ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            'الرياض ',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: "Almarai",
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'الرياض ',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: "Almarai",
+                        ),
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  Divider(),
                   BigTitle(
                     title: 'المواصفات',
                   ),

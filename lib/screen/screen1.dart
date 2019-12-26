@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:saha/screen/screen2.dart';
 import 'package:saha/utilites/cities.dart';
 
-class Screen1 extends StatelessWidget {
+class Screen1 extends StatefulWidget {
+  @override
+  _Screen1State createState() => _Screen1State();
+}
+
+class _Screen1State extends State<Screen1> {
   final mytitle = TextEditingController();
 
   @override
@@ -13,14 +19,7 @@ class Screen1 extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Color(0xffF5FCFF),
           actions: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.arrow_forward,
-                size: 35,
-                color: Color(0xff00AEEF),
-              ),
-            )
+            Register(),
           ],
           title: Center(
               child: Text(
@@ -100,7 +99,9 @@ class Screen1 extends StatelessWidget {
                 height: 50,
                 child: RaisedButton(
                   color: Colors.lightBlue[400],
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   child: Center(
                       child: Text(
                     'تسجيل ',
@@ -189,4 +190,29 @@ Widget myfunc(String mytext, String image, TextInputType type) {
       ),
     ),
   );
+}
+
+class Register extends StatefulWidget {
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      onPressed: () {
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Screen2();
+          }));
+        });
+      },
+      child: Icon(
+        Icons.arrow_forward,
+        size: 35,
+        color: Color(0xff00AEEF),
+      ),
+    );
+  }
 }

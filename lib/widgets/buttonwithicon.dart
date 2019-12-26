@@ -8,6 +8,7 @@ class ButtonWithIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
+      padding: EdgeInsets.all(1),
       child: Row(
         children: <Widget>[
           Text(
@@ -19,7 +20,7 @@ class ButtonWithIcon extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 15,
+            width: 12,
           ),
           Image(
             height: 20,

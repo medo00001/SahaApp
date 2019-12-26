@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saha/screen/screen1.dart';
 
 class TopMenu extends StatelessWidget {
   const TopMenu({
@@ -30,16 +31,34 @@ class TopMenu extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            FlatButton(
-              onPressed: () {},
-              child: Icon(
-                Icons.arrow_forward,
-                size: 35,
-                color: Color(0xff00AEEF),
-              ),
-            )
+            Register(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Register extends StatefulWidget {
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      onPressed: () {
+        setState(() {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Screen1();
+          }));
+        });
+      },
+      child: Icon(
+        Icons.arrow_forward,
+        size: 35,
+        color: Color(0xff00AEEF),
       ),
     );
   }

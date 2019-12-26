@@ -11,12 +11,12 @@ class TitleAndSub extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          width: 200,
+          width: 180,
           child: Text(
             'فورد ماركيز موديل 2000',
             overflow: TextOverflow.visible,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 14,
               fontFamily: "Almarai-bold",
               color: Color(0xff25364F),
             ),
