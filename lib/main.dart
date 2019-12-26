@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:saha/utilites/carosel2.dart';
 import 'screen/screen2.dart';
 import 'screen/screen1.dart';
 
