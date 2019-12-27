@@ -57,7 +57,7 @@ class _Screen1State extends State<Screen1> {
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 40,
               ),
               Container(
                 child: Text(
@@ -69,7 +69,7 @@ class _Screen1State extends State<Screen1> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 35,
               ),
               myfunc(' اسم المستخدم', 'user.png', TextInputType.text),
               SizedBox(height: 10),
@@ -94,6 +94,11 @@ class _Screen1State extends State<Screen1> {
               ),
               myfunc(
                   'كلمة المرور', 'password.png', TextInputType.visiblePassword),
+
+              SizedBox(
+                height: 10,
+              ),
+
               Container(
                 margin: EdgeInsets.all(10),
                 width: 135,
@@ -137,16 +142,26 @@ class _Screen1State extends State<Screen1> {
 
                     child: Row(
                       children: <Widget>[
-                        FlatButton(
-                          onPressed: () {},
+                        SizedBox(
+                          height: 35,
+                        ),
+                        InkWell(
+                          onTap: () {},
                           child: Text(
                             'الشروط والاحكام',
                             style: TextStyle(
-                                fontSize: 14, color: Color(0xff00AEEF)),
+                                fontFamily: "Almarai",
+                                fontSize: 14,
+                                color: Color(0xff00AEEF)),
                           ),
-                          padding: EdgeInsets.all(0),
                         ),
-                        Text('بالتسجيل مع الساحة أنا أوافق على '),
+                        Text(
+                          'بالتسجيل مع الساحة أنا أوافق على ',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: "Almarai",
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -216,6 +231,7 @@ class MyForm extends StatefulWidget {
   _MyFormState createState() => _MyFormState();
 }
 
+// TODO add hide password
 class _MyFormState extends State<MyForm> {
   bool _obscureText = true;
 
