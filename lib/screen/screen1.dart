@@ -16,25 +16,46 @@ class _Screen1State extends State<Screen1> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xffF5FCFF),
-          actions: <Widget>[
-            Register(),
-          ],
-          title: Center(
-              child: Text(
-            "تسجيل حساب جديد",
-            style: TextStyle(
-                color: Color(0xff25364F),
-                fontFamily: "Almarai-bold",
-                fontSize: 17),
-          )),
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Color(0xffF5FCFF),
+        //   actions: <Widget>[
+        //     Register(),
+        //   ],
+        //   title: Center(
+        //       child: Text(
+        //     "تسجيل حساب جديد",
+        //     style: TextStyle(
+        //         color: Color(0xff25364F),
+        //         fontFamily: "Almarai-bold",
+        //         fontSize: 17),
+        //   )),
+        // ),
         backgroundColor: Color(0xffF5FCFF),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              SafeArea(
+                child: Container(
+                  color: Color(0x60F5FCFF),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 121,
+                      ),
+                      Text(
+                        'تسجيل حساب جديد',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: "Almarai-bold",
+                        ),
+                      ),
+                      Register(),
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 50,
               ),
@@ -42,46 +63,25 @@ class _Screen1State extends State<Screen1> {
                 child: Text(
                   'اشترك الان مع تطبيق الساحة',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 16,
                     fontFamily: "Almarai",
                   ),
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 15,
               ),
-              Card(
-                margin: EdgeInsets.all(10),
-                //color: Colors.blue[200],
-                child: ListTile(
-                  title: Text(
-                    'محمد أمير',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: "Almarai",
-                    ),
-                    textAlign: TextAlign.right,
-                  ),
-                  trailing: Image(
-                    image: AssetImage('images/user.png'),
-                  ),
-                  subtitle: Text(
-                    'اخر دخول منذ 2 د ',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontFamily: "Almarai",
-                    ),
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-              ),
-              myfunc('رقم الجوال', 'phone', TextInputType.number),
-              myfunc('الايميل', 'email', TextInputType.emailAddress),
-              myfunc('المدينة', 'city', TextInputType.text),
+              myfunc(' اسم المستخدم', 'user.png', TextInputType.text),
+              SizedBox(height: 10),
+              myfunc('رقم الجوال', 'phone.png', TextInputType.number),
+              SizedBox(height: 10),
+              myfunc('الايميل', 'email.png', TextInputType.emailAddress),
+              // SizedBox(height: 10),
+              // myfunc('المدينة', 'city.png', TextInputType.text),
               Container(
-                height: 60,
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(5),
+                height: 50,
+                margin: EdgeInsets.all(15),
+                padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(2)),
                   // color: Color(0xff25364F),
@@ -92,10 +92,11 @@ class _Screen1State extends State<Screen1> {
                 ),
                 child: CurrentCity(),
               ),
-              myfunc('الرقم السرى', 'password', TextInputType.visiblePassword),
+              myfunc(
+                  'كلمة المرور', 'password.png', TextInputType.visiblePassword),
               Container(
-                margin: EdgeInsets.all(20),
-                width: 140,
+                margin: EdgeInsets.all(10),
+                width: 135,
                 height: 50,
                 child: RaisedButton(
                   color: Colors.lightBlue[400],
@@ -105,13 +106,51 @@ class _Screen1State extends State<Screen1> {
                   child: Center(
                       child: Text(
                     'تسجيل ',
-                    style: TextStyle(fontSize: 20, fontFamily: "Almarai-bold"),
+                    style: TextStyle(fontSize: 16, fontFamily: "Almarai-bold"),
                   )),
                   textColor: Colors.white,
                 ),
               ),
-              Container(
-                child: Text('بالتسجيل مع الساحة أنا أوافق على '),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                    // height: 50,
+                    // width: 360,
+                    // child: RichText(
+                    //   text: TextSpan(
+                    //       text: '  التسجيل مع الساحة أنا أوافق على',
+                    //       style: TextStyle(
+                    //         fontSize: 16.0,
+                    //         color: Colors.black,
+                    //         // decoration: TextDecoration.underline,
+                    //         // decorationColor: Colors.deepPurpleAccent,
+                    //         // decorationStyle: TextDecorationStyle.dotted,
+                    //         // fontStyle: FontStyle.italic,
+                    //         // fontWeight: FontWeight.normal,
+                    //       ),
+                    //       children: <TextSpan>[
+                    //         TextSpan(text: 'الشروط والاحكام '),
+                    //       ]),
+                    // ),
+
+                    child: Row(
+                      children: <Widget>[
+                        FlatButton(
+                          onPressed: () {},
+                          child: Text(
+                            'الشروط والاحكام',
+                            style: TextStyle(
+                                fontSize: 14, color: Color(0xff00AEEF)),
+                          ),
+                          padding: EdgeInsets.all(0),
+                        ),
+                        Text('بالتسجيل مع الساحة أنا أوافق على '),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -172,25 +211,77 @@ class _CurrentCityState extends State<CurrentCity> {
   }
 }
 
-Widget myfunc(String mytext, String image, TextInputType type) {
-  return Card(
-    margin: EdgeInsets.all(10),
-    child: TextField(
-      textAlign: TextAlign.center,
-      // textDirection: TextDirection.rtl,
-      style: TextStyle(
-        fontSize: 16,
-        fontFamily: "Almarai",
-      ),
-      keyboardType: type,
-      decoration: InputDecoration(
-        hintText: mytext,
-        border: OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Color(0xff25364F),
+class MyForm extends StatefulWidget {
+  @override
+  _MyFormState createState() => _MyFormState();
+}
+
+class _MyFormState extends State<MyForm> {
+  bool _obscureText = true;
+
+  String mytext;
+  String image;
+  TextInputType type;
+  _MyFormState({this.mytext, this.image, this.type});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 330,
+      height: 50,
+      child: Card(
+        margin: EdgeInsets.all(0),
+        child: TextField(
+          textAlign: TextAlign.end,
+          // textDirection: TextDirection.rtl,
+          style: TextStyle(
+            fontSize: 16,
+            fontFamily: "Almarai",
+          ),
+          keyboardType: type,
+          decoration: InputDecoration(
+            hintText: mytext,
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Color(0xff25364F),
+              ),
+            ),
+            suffixIcon: Image.asset(
+              "images/$image",
+              scale: 1.5,
+            ),
           ),
         ),
-        suffixIcon: Image.asset("images/$image.png"),
+      ),
+    );
+  }
+}
+
+Widget myfunc(String mytext, String image, TextInputType type) {
+  return Container(
+    width: 330,
+    height: 50,
+    child: Card(
+      margin: EdgeInsets.all(0),
+      child: TextField(
+        textAlign: TextAlign.end,
+        // textDirection: TextDirection.rtl,
+        style: TextStyle(
+          fontSize: 16,
+          fontFamily: "Almarai",
+        ),
+        keyboardType: type,
+        decoration: InputDecoration(
+          hintText: mytext,
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xff25364F),
+            ),
+          ),
+          suffixIcon: Image.asset(
+            "images/$image",
+            scale: 1.5,
+          ),
+        ),
       ),
     ),
   );
@@ -214,7 +305,7 @@ class _RegisterState extends State<Register> {
       },
       child: Icon(
         Icons.arrow_forward,
-        size: 35,
+        size: 24,
         color: Color(0xff00AEEF),
       ),
     );
