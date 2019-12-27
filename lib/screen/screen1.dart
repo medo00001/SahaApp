@@ -110,6 +110,9 @@ class _Screen1State extends State<Screen1> {
                   textColor: Colors.white,
                 ),
               ),
+              Container(
+                child: Text('بالتسجيل مع الساحة أنا أوافق على '),
+              ),
             ],
           ),
         ),
@@ -134,6 +137,7 @@ class _CurrentCityState extends State<CurrentCity> {
       );
       mycities.add(newcity);
     }
+
     return mycities;
   }
 
