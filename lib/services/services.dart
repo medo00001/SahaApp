@@ -17,6 +17,7 @@ class CurrentUser {
       },
     );
     print(current_user.statusCode);
+    
     var x = jsonDecode(current_user.body);
     print(x);
   }
