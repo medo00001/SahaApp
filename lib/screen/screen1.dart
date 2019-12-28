@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:saha/screen/screen2.dart';
+import 'package:saha/services/services.dart';
 import 'package:saha/utilites/cities.dart';
 
 class Screen1 extends StatefulWidget {
@@ -105,8 +106,11 @@ class _Screen1State extends State<Screen1> {
                 height: 50,
                 child: RaisedButton(
                   color: Colors.lightBlue[400],
-                  onPressed: () {
-                    Navigator.pop(context);
+                  onPressed: () async {
+                    CurrentUser currentUser = CurrentUser();
+                    await currentUser.getCurrentUser();
+
+                    // Navigator.pop(context);
                   },
                   child: Center(
                       child: Text(
