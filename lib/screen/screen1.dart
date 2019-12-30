@@ -106,11 +106,11 @@ class _Screen1State extends State<Screen1> {
                 height: 50,
                 child: RaisedButton(
                   color: Colors.lightBlue[400],
-                  onPressed: () async {
-                    CurrentUser currentUser = CurrentUser();
-                    await currentUser.getCurrentUser();
+                  onPressed: () {
+                    // CurrentUser currentUser = CurrentUser();
+                    // await currentUser.getCurrentUser();
 
-                    // Navigator.pop(context);
+                    Navigator.pop(context);
                   },
                   child: Center(
                       child: Text(
@@ -237,7 +237,7 @@ class MyForm extends StatefulWidget {
 
 // TODO add hide password
 class _MyFormState extends State<MyForm> {
-  bool _obscureText = true;
+  // bool _obscureText = true;
 
   String mytext;
   String image;

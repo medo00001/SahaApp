@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:saha/screen/screen2.dart';
 import 'package:saha/utilites/cities.dart';
+import 'package:saha/widgets/Dividertext.dart';
+import 'package:saha/widgets/categories.dart';
+import 'package:saha/widgets/mainmenu.dart';
+import 'package:saha/widgets/search_input.dart';
 
 class Screen0 extends StatefulWidget {
   @override
@@ -14,6 +18,68 @@ class _Screen1State extends State<Screen0> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          notchMargin: 10,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: <Widget>[
+                    Image(
+                      image: AssetImage('images/more.png'),
+                    )
+                  ],
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: <Widget>[
+                    Image(
+                      image: AssetImage('images/user.png'),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 50,
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: <Widget>[
+                    Image(
+                      image: AssetImage('images/nav_notifications.png'),
+                    )
+                  ],
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: <Widget>[
+                    Image(
+                      image: AssetImage('images/nav_home.png'),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+          shape: CircularNotchedRectangle(),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color(0xffFFC117),
+          onPressed: () {},
+          child: Icon(
+            Icons.add,
+            size: 50,
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         // appBar: AppBar(
         //   backgroundColor: Color(0xffF5FCFF),
         //   actions: <Widget>[
@@ -29,203 +95,79 @@ class _Screen1State extends State<Screen0> {
         //   )),
         // ),
         backgroundColor: Color(0xffF5FCFF),
-        body: SingleChildScrollView(
-          child: SafeArea(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  height: 250,
-                  child: Stack(
-                    children: <Widget>[
-                      Image(
-                        image: AssetImage('images/background_graphics.png'),
-                      ),
-                      Positioned(
-                        top: 10,
-                        left: 150,
-                        // width: 100,
-                        // height: 100,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Image(
-                            image: AssetImage('images/logo.png'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 100),
-                        padding: EdgeInsets.all(15),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: myfunc('انا ايحث عن...', 'search.png',
-                              TextInputType.text),
-                        ),
-                      ),
-                      Positioned(
-                        width: 400,
-                        top: 200,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Card(
-                              margin: EdgeInsets.all(20),
-                              child: Row(
-                                children: <Widget>[
-                                  Text(
-                                    'الشركات',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontFamily: "Almarai-bold",
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Card(
-                              margin: EdgeInsets.all(20),
-                              child: Row(
-                                children: <Widget>[
-                                  Text(
-                                    'الشركات',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontFamily: "Almarai-bold",
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Card(
-                              margin: EdgeInsets.all(20),
-                              child: Row(
-                                children: <Widget>[
-                                  Text(
-                                    'الشركات',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontFamily: "Almarai-bold",
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Text(
-                  '*  اعلان ممول  *',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: "Almarai-bold",
-                  ),
-                ),
-                Image(
-                  image: AssetImage('images/bmw1.jpg'),
-                ),
-              ],
-            ),
-          ),
-        ),
+        body: MainPage(),
       ),
     );
   }
 }
 
-Widget myfunc(String mytext, String image, TextInputType type) {
-  return Container(
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.all(
-        Radius.circular(15),
-      ),
-    ),
-    width: double.infinity,
-    child: TextField(
-      textAlign: TextAlign.center,
-      // textDirection: TextDirection.rtl,
-      style: TextStyle(
-        fontSize: 16,
-        fontFamily: "Almarai",
-      ),
-      keyboardType: type,
-      decoration: InputDecoration(
-        hintText: mytext,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          borderSide: BorderSide(
-            color: Color(0xff25364F),
-          ),
-        ),
-        prefixIcon: IconButton(
-          icon: Image(
-            image: AssetImage('images/search.png'),
-          ),
-          onPressed: () {},
-          padding: EdgeInsets.only(left: 10),
-        ),
-      ),
-    ),
-  );
-}
+class MainPage extends StatelessWidget {
+  const MainPage({
+    Key key,
+  }) : super(key: key);
 
-class Register extends StatefulWidget {
-  @override
-  _RegisterState createState() => _RegisterState();
-}
-
-class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      onPressed: () {
-        setState(() {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return Screen2();
-          }));
-        });
-      },
-      child: Icon(
-        Icons.arrow_forward,
-        size: 35,
-        color: Color(0xff00AEEF),
+    return SingleChildScrollView(
+      child: SafeArea(
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 207,
+              child: Stack(
+                children: <Widget>[
+                  Image(
+                    image: AssetImage('images/background_graphics.png'),
+                  ),
+                  Positioned(
+                    top: 10,
+                    left: 150,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Image(
+                        image: AssetImage('images/logo.png'),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 40,
+                    width: 330,
+                    margin: EdgeInsets.only(top: 90, left: 20),
+                    child: Align(
+                        alignment: Alignment.center,
+                        child: MyInput(
+                            image: 'search.png',
+                            mytext: 'انا ايحث عن...',
+                            type: TextInputType.text)),
+                  ),
+                  Positioned(
+                    width: 360,
+                    top: 145,
+                    child: MainMenu(),
+                  ),
+                ],
+              ),
+            ),
+            DividerText(
+              dividertext: '*  اعلان ممول  *',
+            ),
+            Image(
+              height: 220,
+              width: 400,
+              image: AssetImage(
+                'images/bmw1.jpg',
+              ),
+            ),
+            DividerText(
+              dividertext: '* اقسام الشركات*',
+            ),
+            Categories(),
+            DividerText(
+              dividertext: '*شركات مميزة *',
+            )
+          ],
+        ),
       ),
     );
   }
 }
-
-// SizedBox(
-//   height: 50,
-// ),
-// Container(
-//   child: Text(
-//     'اشترك الان مع تطبيق الساحة',
-//     style: TextStyle(
-//       fontSize: 22,
-//       fontFamily: "Almarai",
-//     ),
-//   ),
-// ),
-// SizedBox(
-//   height: 50,
-// ),
-// myfunc('رقم الجوال', 'phone', TextInputType.number),
-// Container(
-//   margin: EdgeInsets.all(20),
-//   width: 140,
-//   height: 50,
-//   child: RaisedButton(
-//     color: Colors.lightBlue[400],
-//     onPressed: () {
-//       Navigator.pop(context);
-//     },
-//     child: Center(
-//         child: Text(
-//       'تسجيل ',
-//       style: TextStyle(fontSize: 20, fontFamily: "Almarai-bold"),
-//     )),
-//     textColor: Colors.white,
-//   ),
-// ),
