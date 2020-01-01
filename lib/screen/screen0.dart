@@ -80,20 +80,6 @@ class _Screen1State extends State<Screen0> {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        // appBar: AppBar(
-        //   backgroundColor: Color(0xffF5FCFF),
-        //   actions: <Widget>[
-        //     Register(),
-        //   ],
-        //   title: Center(
-        //       child: Text(
-        //     "تسجيل حساب جديد",
-        //     style: TextStyle(
-        //         color: Color(0xff25364F),
-        //         fontFamily: "Almarai-bold",
-        //         fontSize: 17),
-        //   )),
-        // ),
         backgroundColor: Color(0xffF5FCFF),
         body: MainPage(),
       ),
@@ -108,8 +94,8 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SafeArea(
+    return SafeArea(
+      child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Container(
@@ -161,7 +147,11 @@ class MainPage extends StatelessWidget {
             DividerText(
               dividertext: '* اقسام الشركات*',
             ),
-            Categories(),
+            SizedBox(
+              child: Categories(),
+              width: MediaQuery.of(context).size.height - 50,
+              height: MediaQuery.of(context).size.height - 350,
+            ),
             DividerText(
               dividertext: '*شركات مميزة *',
             )

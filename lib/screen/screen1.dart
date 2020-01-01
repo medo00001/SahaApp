@@ -31,11 +31,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       backgroundColor: Color(0xffF5FCFF),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            SafeArea(
-              child: Container(
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                height: 50,
                 color: Color(0x60F5FCFF),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,108 +55,108 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              child: Text(
-                'اشترك الان مع تطبيق الساحة',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: "Almarai",
-                ),
+              SizedBox(
+                height: 40,
               ),
-            ),
-            SizedBox(
-              height: 35,
-            ),
-            myfunc(' اسم المستخدم', 'user.png', TextInputType.text),
-            SizedBox(height: 10),
-            myfunc('رقم الجوال', 'phone.png', TextInputType.number),
-            SizedBox(height: 10),
-            myfunc('الايميل', 'email.png', TextInputType.emailAddress),
-            // SizedBox(height: 10),
-            // myfunc('المدينة', 'city.png', TextInputType.text),
-            Container(
-              height: 50,
-              margin: EdgeInsets.all(15),
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(2)),
-                // color: Color(0xff25364F),
-                border: Border.all(
-                  width: 0.6,
-                  color: Color(0xff25364F),
-                ),
-              ),
-              child: CurrentCity(),
-            ),
-            myfunc(
-                'كلمة المرور', 'password.png', TextInputType.visiblePassword),
-
-            SizedBox(
-              height: 10,
-            ),
-
-            Container(
-              margin: EdgeInsets.all(10),
-              width: 135,
-              height: 50,
-              child: RaisedButton(
-                color: Colors.lightBlue[400],
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return Screen2();
-                    }));
-                  });
-                },
-                child: Center(
-                    child: Text(
-                  'تسجيل ',
+              Container(
+                child: Text(
+                  'اشترك الان مع تطبيق الساحة',
                   style: TextStyle(
                     fontSize: 16,
-                    fontFamily: "Almarai-bold",
-                  ),
-                )),
-                textColor: Colors.white,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Container(
-                  child: Row(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 35,
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Text(
-                          'الشروط والاحكام',
-                          style: TextStyle(
-                              fontFamily: "Almarai",
-                              fontSize: 14,
-                              color: Color(0xff00AEEF)),
-                        ),
-                      ),
-                      Text(
-                        'بالتسجيل مع الساحة أنا أوافق على ',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: "Almarai",
-                        ),
-                      ),
-                    ],
+                    fontFamily: "Almarai",
                   ),
                 ),
-              ],
-            ),
-          ],
+              ),
+              SizedBox(
+                height: 35,
+              ),
+              myfunc(' اسم المستخدم', 'user.png', TextInputType.text),
+              SizedBox(height: 10),
+              myfunc('رقم الجوال', 'phone.png', TextInputType.number),
+              SizedBox(height: 10),
+              myfunc('الايميل', 'email.png', TextInputType.emailAddress),
+              // SizedBox(height: 10),
+              // myfunc('المدينة', 'city.png', TextInputType.text),
+              Container(
+                height: 50,
+                margin: EdgeInsets.all(15),
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(2)),
+                  // color: Color(0xff25364F),
+                  border: Border.all(
+                    width: 0.6,
+                    color: Color(0xff25364F),
+                  ),
+                ),
+                child: CurrentCity(),
+              ),
+              myfunc(
+                  'كلمة المرور', 'password.png', TextInputType.visiblePassword),
+
+              SizedBox(
+                height: 10,
+              ),
+
+              Container(
+                margin: EdgeInsets.all(10),
+                width: 135,
+                height: 50,
+                child: RaisedButton(
+                  color: Colors.lightBlue[400],
+                  onPressed: () {
+                    // setState(() {
+                    //   Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) {
+                    //     // return Screen0();
+                    //   }));
+                    // });
+                  },
+                  child: Center(
+                      child: Text(
+                    'تسجيل ',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: "Almarai-bold",
+                    ),
+                  )),
+                  textColor: Colors.white,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                    child: Row(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 35,
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: Text(
+                            'الشروط والاحكام',
+                            style: TextStyle(
+                                fontFamily: "Almarai",
+                                fontSize: 14,
+                                color: Color(0xff00AEEF)),
+                          ),
+                        ),
+                        Text(
+                          'بالتسجيل مع الساحة أنا أوافق على ',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: "Almarai",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -47,8 +47,8 @@ class Screen2 extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -158,6 +158,14 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   Divider(),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(20),
+              height: 260,
+              child: Column(
+                children: <Widget>[
                   BigTitle(
                     title: 'المواصفات',
                   ),
