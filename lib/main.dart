@@ -3,7 +3,7 @@ import 'screen/screen2.dart';
 import 'screen/screen1.dart';
 import 'screen/screen0.dart';
 
-void main() => runApp(Screen0());
+void main() => runApp(Screen1());
 
 // how to make list of options
 

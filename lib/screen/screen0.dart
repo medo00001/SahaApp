@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:saha/screen/screen2.dart';
-import 'package:saha/utilites/cities.dart';
 import 'package:saha/widgets/Dividertext.dart';
 import 'package:saha/widgets/categories.dart';
 import 'package:saha/widgets/mainmenu.dart';
 import 'package:saha/widgets/search_input.dart';
 
 class Screen0 extends StatefulWidget {
+  // String currentuser;
+  // Screen0({this.currentuser});
   @override
   _Screen1State createState() => _Screen1State();
 }
@@ -72,7 +73,7 @@ class _Screen1State extends State<Screen0> {
           shape: CircularNotchedRectangle(),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Color(0xffFFC117),
+          backgroundColor: Color(0xFFFFC117),
           onPressed: () {},
           child: Icon(
             Icons.add,
@@ -88,9 +89,8 @@ class _Screen1State extends State<Screen0> {
 }
 
 class MainPage extends StatelessWidget {
-  const MainPage({
-    Key key,
-  }) : super(key: key);
+  final String currentuser;
+  MainPage({this.currentuser});
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +118,7 @@ class MainPage extends StatelessWidget {
                   Container(
                     height: 40,
                     width: 330,
-                    margin: EdgeInsets.only(top: 90, left: 20),
+                    margin: EdgeInsets.only(top: 90, left: 20, right: 20),
                     child: Align(
                         alignment: Alignment.center,
                         child: MyInput(
@@ -137,9 +137,11 @@ class MainPage extends StatelessWidget {
             DividerText(
               dividertext: '*  اعلان ممول  *',
             ),
+            Text(currentuser + ' مرحبا بك'),
             Image(
               height: 220,
               width: 400,
+              fit: BoxFit.cover,
               image: AssetImage(
                 'images/bmw1.jpg',
               ),
@@ -149,11 +151,27 @@ class MainPage extends StatelessWidget {
             ),
             SizedBox(
               child: Categories(),
-              width: MediaQuery.of(context).size.height - 50,
-              height: MediaQuery.of(context).size.height - 350,
+              width: 360,
+              height: 240,
             ),
             DividerText(
               dividertext: '*شركات مميزة *',
+            ),
+            SizedBox(
+              height: 220,
+              width: 450,
+              child: Column(
+                children: <Widget>[
+                  Image(
+                    height: 220,
+                    width: 400,
+                    // fit: BoxFit.cover,
+                    image: AssetImage(
+                      'images/bmw1.jpg',
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),
