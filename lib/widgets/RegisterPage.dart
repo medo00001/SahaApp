@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 
-Widget myfunc(String mytext, String image, TextInputType type) {
+Widget myfunc(String mytext, String image, TextInputType controllertype,
+    TextEditingController mycontroller) {
   return Container(
     width: 330,
     height: 50,
     child: Card(
       margin: EdgeInsets.all(0),
       child: TextField(
+        controller: mycontroller,
         textAlign: TextAlign.end,
         // textDirection: TextDirection.rtl,
         style: TextStyle(
           fontSize: 16,
           fontFamily: "Almarai",
         ),
-        keyboardType: type,
+        keyboardType: controllertype,
         decoration: InputDecoration(
+          labelText: mytext,
           hintText: mytext,
           border: OutlineInputBorder(
             borderSide: BorderSide(
@@ -39,7 +42,8 @@ class MyForm extends StatelessWidget {
   final String mytext;
   final String image;
   final TextInputType type;
-  MyForm({this.mytext, this.image, this.type});
+  final TextEditingController mycontroller;
+  MyForm({this.mytext, this.image, this.type, this.mycontroller});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,6 +52,7 @@ class MyForm extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.all(0),
         child: TextField(
+          controller: mycontroller,
           textAlign: TextAlign.end,
           // textDirection: TextDirection.rtl,
           style: TextStyle(

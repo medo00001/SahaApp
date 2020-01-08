@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
-import 'screen/screen2.dart';
-import 'screen/screen1.dart';
-import 'screen/screen0.dart';
+import 'package:saha/screen/bottomnav.dart';
+import 'package:saha/screen/profile_screen.dart';
+import 'package:saha/screen/register_Screen.dart';
+import 'package:saha/widgets/bottombar.dart';
+import 'screen/details.dart';
+import 'screen/home.dart';
 
-void main() => runApp(Screen1());
+// void main() => runApp(BottomNavBar());
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Liquorie',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HomePage1());
+  }
+}
 
 // how to make list of options
 

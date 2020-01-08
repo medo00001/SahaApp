@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:saha/screen/screen1.dart';
-import 'package:saha/screen/screen2.dart';
+import 'package:saha/screen/register_Screen.dart';
 
 class Button extends StatefulWidget {
   @override
@@ -24,7 +23,7 @@ class _ButtonState extends State<Button> {
         onPressed: () {
           setState(() {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return Screen1();
+              return RegScreenWidget();
             }));
           });
         },
@@ -37,11 +36,3 @@ class _ButtonState extends State<Button> {
     );
   }
 }
-// class Button extends StatelessWidget {
-//   const Button({
-//     Key key,
-//   }) : super(key: key);
-
-//   @override
-
-// }

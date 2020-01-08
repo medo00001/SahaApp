@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:saha/screen/screen1.dart';
+import 'package:saha/screen/register_Screen.dart';
 
 class TopMenu extends StatelessWidget {
   const TopMenu({
@@ -51,7 +51,7 @@ class _RegisterState extends State<Register> {
       onPressed: () {
         setState(() {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return Screen1();
+            return RegScreenWidget();
           }));
         });
       },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:saha/screen/screen2.dart';
+import 'package:saha/screen/details.dart';
 
 class BackIcon extends StatefulWidget {
   @override
@@ -13,7 +13,7 @@ class _BackIconState extends State<BackIcon> {
       onPressed: () {
         setState(() {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return Screen2();
+            return DetailScreen();
           }));
         });
       },

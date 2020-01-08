@@ -10,7 +10,7 @@ import 'package:saha/widgets/profilerow.dart';
 import 'package:saha/widgets/titleandsub.dart';
 import 'package:saha/widgets/topmenu.dart';
 
-class Screen2 extends StatelessWidget {
+class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
